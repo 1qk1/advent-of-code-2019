@@ -10,8 +10,8 @@
 
 let input = require("./input");
 const intCode = () => {
-  for (let i = 0; i < input.length / 4; i++) {
-    const indices = [i * 4, i * 4 + 1, i * 4 + 2, i * 4 + 3];
+  for (let i = 0; i < input.length - 1; i += 4) {
+    const indices = [i, i + 1, i + 2, i + 3];
     switch (input[indices[0]]) {
       case 1:
         input[input[indices[3]]] =
@@ -29,4 +29,4 @@ const intCode = () => {
 
 intCode();
 
-console.log(input);
+console.log(input[0]);
